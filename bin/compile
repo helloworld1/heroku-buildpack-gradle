@@ -40,7 +40,7 @@ fi
 export GRADLE_USER_HOME=$CACHE_DIR
 
 if [ -f $BUILD_DIR/gradlew ] ; then
-  BUILDCMD="./gradlew"
+  BUILDCMD="./gradlew -v"
   chmod +x ${BUILD_DIR}/gradlew
 else
   if [ ! -d $CACHE_DIR/$GRADLE_DIST ] ; then
@@ -61,7 +61,7 @@ export PATH=$CACHE_DIR/$GRADLE_DIST/bin:$PATH
  
 # build app
 echo "-----> Building Gradle app..."
-echo "       WARNING: The Gradle buildpack is currently in Beta."
+echo "       WARNING: The Gradle buildpack is currently in Theta."
 echo "-----> executing $BUILDCMD"
 
 $BUILDCMD 2>&1 | sed -u 's/^/       /'
