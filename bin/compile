@@ -40,7 +40,8 @@ fi
 export GRADLE_USER_HOME=$CACHE_DIR
 
 if [ -f $BUILD_DIR/gradlew ] ; then
-  BUILDCMD="DEFAULT_JVM_OPTS=-Xmx512m ./gradlew --info"
+  DEFAULT_JVM_OPTS="-Xmx512m"
+  BUILDCMD=" ./gradlew --info"
   chmod +x ${BUILD_DIR}/gradlew
 else
   if [ ! -d $CACHE_DIR/$GRADLE_DIST ] ; then
