@@ -41,7 +41,7 @@ export GRADLE_USER_HOME=$CACHE_DIR
 
 if [ -f $BUILD_DIR/gradlew ] ; then
   DEFAULT_JVM_OPTS="-Xmx512m"
-  BUILDCMD=" ./gradlew --info"
+  BUILDCMD=" ./gradlew --info --parallel-threads=4"
   chmod +x ${BUILD_DIR}/gradlew
 else
   if [ ! -d $CACHE_DIR/$GRADLE_DIST ] ; then
